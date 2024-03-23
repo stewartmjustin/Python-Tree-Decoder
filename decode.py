@@ -1,3 +1,5 @@
+import sys
+
 def decode(message_file):
     f = open(message_file)
     message = ""
@@ -13,5 +15,7 @@ def decode(message_file):
 
     return message.strip()
 
-message = decode("coding_qual_input.txt")
+if len(sys.argv) < 2:
+    sys.exit()
+message = decode(sys.argv[1])
 print(message)
